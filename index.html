@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="number">
+<button onclick="checkNumber()">Check</button>
+<script>
+    function checkNumber(){
+        let k = document.getElementById('number').value;
+            if (k>1000|| k < 2){
+                alert('Nhập 1 số lớn hơn 2 và nhỏ hơn 1000');
+                return;
+            }
+        let check = true ;
+        for (let i = 0; i < k; i++) {
+            if ( k % i== 0){
+                check = false;
+                document.write(k+ ' không phải là số nguyên tố')
+                break;
+            }
+        }
+        if (check==true){
+            document.write(k+' là số nguyên tố')
+        }
+    }
+</script>
+</body>
+</html>
