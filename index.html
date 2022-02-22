@@ -8,22 +8,18 @@
 <input type="number" id="number">
 <button onclick="checkNumber()">Check</button>
 <script>
-    function checkNumber(){
+    function checkNumber() {
         let k = document.getElementById('number').value;
-            if (k>1000|| k < 2){
-                alert('Nhập 1 số lớn hơn 2 và nhỏ hơn 1000');
-                return;
-            }
-        let check = true ;
-        for (let i = 0; i < k; i++) {
-            if ( k % i== 0){
-                check = false;
-                document.write(k+ ' không phải là số nguyên tố')
+        if (k <= 2 || k > 1000) {
+            alert('Nhập 1 số lớn hơn 2 và nhỏ hơn 1000');
+            return;
+        }
+        for (let i = 2; i < k; i++) {
+            if (k % i == 0) {
+                document.write(k + ' không phải là số nguyên tố');
                 break;
             }
-        }
-        if (check==true){
-            document.write(k+' là số nguyên tố')
+            document.write(k + ' là số nguyên tố');
         }
     }
 </script>
