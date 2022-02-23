@@ -5,23 +5,29 @@
     <title>Title</title>
 </head>
 <body>
-<input type="number" id="number">
-<button onclick="checkNumber()">Check</button>
 <script>
-    function checkNumber() {
-        let k = document.getElementById('number').value;
-        if (k <= 2 || k > 1000) {
-            alert('Nhập 1 số lớn hơn 2 và nhỏ hơn 1000');
-            return;
-        }
-        for (let i = 2; i < k; i++) {
-            if (k % i == 0) {
-                document.write(k + ' không phải là số nguyên tố');
+    function isPrime(n) {
+        let check = 1;
+        if (n < 2)
+            return check = 0;
+        let i = 2;
+        while (i < n) {
+            if (n % i == 0) {
+                check = 0;
                 break;
             }
-            document.write(k + ' là số nguyên tố');
+            i++;
         }
+        return check;
     }
+    let i = 0, check = 0, result = "";
+    while (i < 10000) {
+        check = isPrime(i);
+        if (check == 1)
+            result += i + " ";
+        ++i;
+    }
+    document.write(result);
 </script>
 </body>
 </html>
